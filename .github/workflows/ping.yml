@@ -22,11 +22,11 @@ jobs:
       # Runs a single command using the runners shell
       - name: copy events in a test file
         run: |
-          echo "Hello, world!" > world.txt
-          echo "${{github.event.pull_request.html_url}}" > world.txt
-          echo "${{github.event.pull_request.user.login}}" > world.txt
+          echo "Hello, world!" > path/to/artifact/world.txt
+          echo "${{github.event.pull_request.html_url}}" > path/to/artifact/world.txt
+          echo "${{github.event.pull_request.user.login}}" > path/to/artifact/world.txt
       - name: Upload event in a artifacts
         uses: actions/upload-artifact@v3
         with:
           name: atifact for storing data
-          path: world.txt
+          path: path/to/artifact/world.txt
